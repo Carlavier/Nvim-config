@@ -63,6 +63,18 @@ return {
     local servers = {
       vtsls = {},
 
+      pyright = {
+        settings = {
+          python = {
+            analysis = {
+              autoSearchPaths = true,
+              useLibraryCodeForTypes = true,
+              diagnosticMode = 'workspace',
+            },
+          },
+        },
+      },
+
       clangd = {
         cmd = {
           'clangd',

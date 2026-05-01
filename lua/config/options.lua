@@ -44,3 +44,5 @@ vim.g.deprecation_warnings = false
 vim.deprecate = function() end
 
 vim.cmd('packadd nvim.undotree')
+
+vim.opt.showmode = false

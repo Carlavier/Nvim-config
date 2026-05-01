@@ -12,6 +12,7 @@ return {
         lualine_a = {
           {
             'mode',
+            separator = { right = '' },
             color = function()
               local mode_colors = {
                 n = '#0000ff',

@@ -12,6 +12,7 @@ return {
         local bg_even_darker_blue = '#0e111a'
 
         hl(0, 'Normal', { bg = bg_black })
+        hl(0, 'NormalNC', { bg = bg_black })
         hl(0, 'NormalFloat', { bg = bg_black })
         hl(0, 'NvimTreeNormal', { bg = bg_black })
         hl(0, 'NvimTreeNormalNC', { bg = bg_black })
@@ -29,8 +30,6 @@ return {
           'TelescopeResultsBorder',
           'TelescopePreviewNormal',
           'TelescopePreviewBorder',
-          'NormalNC',
-          'NvimTreeNormalNC',
         }
 
         for _, group in ipairs(dark_blue_groups) do
