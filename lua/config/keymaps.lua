@@ -29,31 +29,10 @@ vim.keymap.set('n', '<M-k>', '<C-w>k', { desc = 'Move focus to the upper window'
 
 vim.keymap.set('n', '<leader>f', '<cmd>w<CR>', { desc = '[F]ormat and save' })
 
-vim.keymap.set('n', '<leader>qs', function() require('persistence').select() end, { desc = 'Select Session' })
-vim.keymap.set(
-  'n',
-  '<leader>ql',
-  function() require('persistence').load({ last = true }) end,
-  { desc = 'Restore Last Session' }
-)
-vim.keymap.set('n', '<leader>qd', function() require('persistence').stop() end, { desc = "Don't Save Session" })
-
-vim.keymap.set('n', '<leader>x', '<cmd>Bdelete<CR>', { desc = 'Close Buffer' })
 vim.keymap.set('n', '<C-PageDown>', '<cmd>bnext<CR>', { desc = 'Next Buffer' })
 vim.keymap.set('n', '<C-PageUp>', '<cmd>bprev<CR>', { desc = 'Previous Buffer' })
-vim.keymap.set('n', '<leader>t', '<cmd>e #<CR>')
 
 vim.keymap.set('n', '<leader>pf', '<cmd>Ex<Enter>')
-
-vim.keymap.set('n', 'gd', function()
-  local clients = vim.lsp.get_clients({ bufnr = 0 })
-
-  if #clients > 0 then
-    vim.lsp.buf.definition()
-  else
-    vim.cmd('normal! gd')
-  end
-end, { desc = 'LSP definition with fallback to built-in gd' })
 
 vim.keymap.set(
   'n',

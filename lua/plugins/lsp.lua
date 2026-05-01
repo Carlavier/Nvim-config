@@ -24,6 +24,15 @@ return {
         map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
         map('gra', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
         map('grD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+        vim.keymap.set('n', 'gd', function()
+          local clients = vim.lsp.get_clients({ bufnr = 0 })
+
+          if #clients > 0 then
+            vim.lsp.buf.definition()
+          else
+            vim.cmd('normal! gd')
+          end
+        end, { desc = 'LSP definition with fallback to built-in gd' })
 
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         if client and client:supports_method('textDocument/documentHighlight', event.buf) then
