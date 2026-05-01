@@ -1,3 +1,6 @@
 require('autocmd/term-auto-focus')
 require('autocmd/guess-indent')
+require('autocmd/yank-flash')
 require('autocmd/load-persistence-nvim')
+require('autocmd/undotree-only-keymaps')
+require('autocmd/unhighlight-suggestion')

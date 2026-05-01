@@ -61,6 +61,8 @@ return {
 
     ---@type table<string, vim.lsp.Config>
     local servers = {
+      vtsls = {},
+
       clangd = {
         cmd = {
           'clangd',

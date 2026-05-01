@@ -9,6 +9,7 @@ return {
         local hl = vim.api.nvim_set_hl
         local bg_black = '#000000'
         local bg_dark_blue = '#0e111a'
+        local bg_even_darker_blue = '#0e111a'
 
         hl(0, 'Normal', { bg = bg_black })
         hl(0, 'NormalFloat', { bg = bg_black })
@@ -19,7 +20,7 @@ return {
         hl(0, 'EndOfBuffer', { fg = bg_black, bg = bg_black })
         hl(0, 'CursorLine', { bg = '#141414' })
 
-        local groups = {
+        local dark_blue_groups = {
           'TelescopeNormal',
           'TelescopeBorder',
           'TelescopePromptNormal',
@@ -31,9 +32,13 @@ return {
           'NormalNC',
           'NvimTreeNormalNC',
         }
-        for _, group in ipairs(groups) do
+
+        for _, group in ipairs(dark_blue_groups) do
           hl(0, group, { bg = bg_dark_blue })
         end
+
+        hl(0, 'BufferLineBufferSelected', { fg = '#eeeeee', bg = bg_black, bold = true })
+        hl(0, 'BufferLineIndicatorSelected', { fg = '#ff0000', bg = bg_black })
       end,
     })
 
