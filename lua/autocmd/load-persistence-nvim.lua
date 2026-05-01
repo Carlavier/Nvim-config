@@ -1,7 +1,7 @@
 vim.api.nvim_create_autocmd('VimEnter', {
   group = vim.api.nvim_create_augroup('persistence', { clear = true }),
   callback = function()
-    if vim.fn.argc() == 0 then
+    if vim.fn.argc() == 0 and not vim.g.started_with_stdin then
       require('persistence').load()
       vim.cmd('silent! bufdo filetype detect')
     end
